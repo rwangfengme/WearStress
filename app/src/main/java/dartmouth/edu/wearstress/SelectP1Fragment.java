@@ -38,15 +38,20 @@ public class SelectP1Fragment extends Fragment implements View.OnClickListener{
         Intent i  = new Intent(getActivity(), SelectP2Activity.class);
         switch (v.getId()){
             case R.id.img1:
-                Log.d("11111", "1");
-                i.putExtra("requestVal", 1);
+                i.putExtra("p1", 1);
                 startActivityForResult(i, 1);
                 break;
             case R.id.img2:
+                i.putExtra("p1", 2);
+                startActivityForResult(i, 1);
                 break;
             case R.id.img3:
+                i.putExtra("p1", 3);
+                startActivityForResult(i, 1);
                 break;
             case R.id.img4:
+                i.putExtra("p1", 4);
+                startActivityForResult(i, 1);
                 break;
             default:
                 break;
