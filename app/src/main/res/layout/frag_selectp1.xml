@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+<TableLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <TableRow>
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/img1"
+            android:background="@drawable/psm_alarm_clock"/>
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/img2"
+            android:background="@drawable/psm_puppy"/>
+    </TableRow>
+
+    <TableRow>
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/img3"
+            android:background="@drawable/psm_running3"/>
+        <ImageButton
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:id="@+id/img4"
+            android:background="@drawable/psm_running4"/>
+    </TableRow>
+</TableLayout>
+</LinearLayout>
