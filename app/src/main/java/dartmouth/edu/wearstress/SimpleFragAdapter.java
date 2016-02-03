@@ -5,6 +5,7 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.wearable.view.FragmentGridPagerAdapter;
+import android.util.Log;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
@@ -42,14 +43,11 @@ public class SimpleFragAdapter extends FragmentGridPagerAdapter{
 
     @Override
     public Drawable getBackgroundForRow(int row) {
+        Log.d("BBBBKKKK","dahkjshdflkadshf");
+        int[] bg = {R.drawable.stress_bg1, R.drawable.stress_bg3, R.drawable.stress_bg5,
+                R.drawable.stress_bg7, R.drawable.stress_bg9, R.drawable.stress_bg11,
+                R.drawable.stress_bg13, R.drawable.stress_bg15};
         int degree = ((MainActivity) mContext).stressDegree;
-        int bg;
-        if(degree == 5){
-            bg = R.drawable.stressbg5;
-        }else{
-
-            bg = R.drawable.stressbg13;
-        }
-        return mContext.getDrawable(bg);
+        return mContext.getDrawable(bg[degree/2]);
     }
 }

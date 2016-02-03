@@ -15,24 +15,29 @@ import java.util.Locale;
 
 public class MainActivity extends WearableActivity {
     public GridViewPager mGridPager;
-    public int stressDegree = 1;
+    public int stressDegree = 8;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        setAdapter();
+    }
 
+    public void setAdapter(){
         mGridPager = (GridViewPager) findViewById(R.id.pager);
         SimpleFragAdapter mAdapter = new SimpleFragAdapter(this, getFragmentManager());
         mGridPager.setAdapter(mAdapter);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+    public void changeBackgroud(int requestCode, int resultCode, Intent data) {
+        Log.d("resultCode", ""+resultCode);
         if(resultCode == 0){
-            Log.d("selection", data.getStringExtra("selection"));
+            //Log.d("selection", data.getStringExtra("selection"));
             stressDegree = data.getIntExtra("selection", 1);
             mGridPager.scrollTo(0, 0);
+            setAdapter();
         }
     }
 }
