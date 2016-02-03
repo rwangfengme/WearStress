@@ -31,11 +31,12 @@ public class MainActivity extends WearableActivity {
     }
 
 
-    public void changeBackgroud(int requestCode, int resultCode, Intent data) {
+    public void changeBackground(int requestCode, int resultCode, Intent data) {
         Log.d("resultCode", ""+resultCode);
         if(resultCode == 0){
-            //Log.d("selection", data.getStringExtra("selection"));
-            stressDegree = data.getIntExtra("selection", 1);
+            if(data == null)
+                return;
+            stressDegree = data.getIntExtra("p2", 1);
             mGridPager.scrollTo(0, 0);
             setAdapter();
         }

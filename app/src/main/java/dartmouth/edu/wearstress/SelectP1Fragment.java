@@ -61,8 +61,7 @@ public class SelectP1Fragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ((MainActivity)getActivity()).changeBackgroud(requestCode, resultCode, data);
-
+        ((MainActivity)getActivity()).changeBackground(requestCode, resultCode, data);
     }
 
 }

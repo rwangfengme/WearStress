@@ -43,7 +43,6 @@ public class SimpleFragAdapter extends FragmentGridPagerAdapter{
 
     @Override
     public Drawable getBackgroundForRow(int row) {
-        Log.d("BBBBKKKK","dahkjshdflkadshf");
         int[] bg = {R.drawable.stress_bg1, R.drawable.stress_bg3, R.drawable.stress_bg5,
                 R.drawable.stress_bg7, R.drawable.stress_bg9, R.drawable.stress_bg11,
                 R.drawable.stress_bg13, R.drawable.stress_bg15};

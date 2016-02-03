@@ -22,6 +22,8 @@ public class SelectP2Activity extends WearableActivity implements View.OnClickLi
 
         i1.setOnClickListener(this);
         i2.setOnClickListener(this);
+        i3.setOnClickListener(this);
+        i4.setOnClickListener(this);
     }
 
     @Override
