@@ -2,16 +2,33 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-        <LinearLayout
+
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200px"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/status"
-                android:text="GG"/>
-        </LinearLayout>
+            android:layout_height="200px">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200px"
+                android:background="@color/grey"
+                android:alpha="0.3"
+                android:gravity="center"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="200px"
+                android:gravity="center">
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="200px"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/suggestion"
+                    android:textColor="@color/white"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:text="GG"/>
+            </LinearLayout>
+        </FrameLayout>
+
+
 
         <LinearLayout
             android:layout_width="match_parent"

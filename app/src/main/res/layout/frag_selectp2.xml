@@ -10,26 +10,22 @@
                 <ImageButton
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:id="@+id/imgp1"
-                    android:background="@drawable/psm_stressed_person"/>
+                    android:id="@+id/imgp1" />
                 <ImageButton
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:id="@+id/imgp2"
-                    android:background="@drawable/psm_stressed_cat"/>
+                    android:id="@+id/imgp2" />
             </TableRow>
 
             <TableRow>
                 <ImageButton
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:id="@+id/imgp3"
-                    android:background="@drawable/psm_running3"/>
+                    android:id="@+id/imgp3" />
                 <ImageButton
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:id="@+id/imgp4"
-                    android:background="@drawable/psm_running4"/>
+                    android:id="@+id/imgp4" />
             </TableRow>
         </TableLayout>
 </LinearLayout>

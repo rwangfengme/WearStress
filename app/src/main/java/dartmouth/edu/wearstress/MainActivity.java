@@ -15,7 +15,7 @@ import java.util.Locale;
 
 public class MainActivity extends WearableActivity {
     public GridViewPager mGridPager;
-    public int stressDegree = 8;
+    public int stressDegree = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +31,13 @@ public class MainActivity extends WearableActivity {
     }
 
 
-    public void changeBackground(int requestCode, int resultCode, Intent data) {
+    public void repaint(int requestCode, int resultCode, Intent data) {
         Log.d("resultCode", ""+resultCode);
         if(resultCode == 0){
             if(data == null)
                 return;
             stressDegree = data.getIntExtra("p2", 1);
+            Log.d("stress", ""+stressDegree);
             mGridPager.scrollTo(0, 0);
             setAdapter();
         }

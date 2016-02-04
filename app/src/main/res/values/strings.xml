@@ -1,4 +1,13 @@
 <resources>
     <string name="app_name">WearStress</string>
     <string name="hello_world">Hello World!</string>
+    <string name="hint">Wipe right and choose a picture!</string>
+    <string name="words_stress_1">You are enjoying your life!</string>
+    <string name="words_stress_3">Hey, keep on your healthy life!</string>
+    <string name="words_stress_5">Not bad day, isn\'t it?</string>
+    <string name="words_stress_7">Seems you have correct Work-life balance.</string>
+    <string name="words_stress_9">Some rest might make you more productive.</string>
+    <string name="words_stress_11">Remember that all work and no play makes Jack a dull boy.</string>
+    <string name="words_stress_13">You should have some rest.</string>
+    <string name="words_stress_15">It is not what life should be. You are killing yourself!</string>
 </resources>

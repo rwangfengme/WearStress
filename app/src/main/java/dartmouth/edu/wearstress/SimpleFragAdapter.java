@@ -47,6 +47,8 @@ public class SimpleFragAdapter extends FragmentGridPagerAdapter{
                 R.drawable.stress_bg7, R.drawable.stress_bg9, R.drawable.stress_bg11,
                 R.drawable.stress_bg13, R.drawable.stress_bg15};
         int degree = ((MainActivity) mContext).stressDegree;
-        return mContext.getDrawable(bg[degree/2]);
+        if (degree == 0)
+            degree = 8;
+        return mContext.getDrawable(bg[(degree-1)/2]);
     }
 }

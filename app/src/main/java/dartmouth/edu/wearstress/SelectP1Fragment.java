@@ -4,16 +4,20 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
+
+import java.util.Random;
 
 /**
  * Created by _ReacTor on 16/2/2.
  */
 public class SelectP1Fragment extends Fragment implements View.OnClickListener{
+    private int groupIndex;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -29,13 +33,20 @@ public class SelectP1Fragment extends Fragment implements View.OnClickListener{
         i3.setOnClickListener(this);
         i4.setOnClickListener(this);
 
-        return view;
+        Random rand = new Random();
+        groupIndex =  1 + rand.nextInt(3);
+        i1.setBackground(getActivity().getDrawable(PSM.getGridById(groupIndex)[0]));
+        i2.setBackground(getActivity().getDrawable(PSM.getGridById(groupIndex)[2]));
+        i3.setBackground(getActivity().getDrawable(PSM.getGridById(groupIndex)[8]));
+        i4.setBackground(getActivity().getDrawable(PSM.getGridById(groupIndex)[10]));
 
+        return view;
     }
 
     @Override
     public void onClick(View v) {
         Intent i  = new Intent(getActivity(), SelectP2Activity.class);
+        i.putExtra("groupIndex", groupIndex);
         switch (v.getId()){
             case R.id.img1:
                 i.putExtra("p1", 1);
@@ -61,7 +72,7 @@ public class SelectP1Fragment extends Fragment implements View.OnClickListener{
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        ((MainActivity)getActivity()).changeBackground(requestCode, resultCode, data);
+        ((MainActivity)getActivity()).repaint(requestCode, resultCode, data);
     }
 
 }
