@@ -1,11 +1,17 @@
 package dartmouth.edu.wearstress;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.wearable.activity.WearableActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.util.Date;
 
 /**
  * Created by _ReacTor on 16/2/2.
@@ -41,24 +47,37 @@ public class SelectP2Activity extends WearableActivity implements View.OnClickLi
         i2.setOnClickListener(this);
         i3.setOnClickListener(this);
         i4.setOnClickListener(this);
+
+        //findViewById(R.id.select_p2).setBackground(getDrawable(R.drawable.flower));
     }
 
     @Override
     public void onClick(View v) {
         Intent mIntent = new Intent();
+        int stress = 0;
         switch (v.getId()){
             case R.id.imgp1:
-                mIntent.putExtra("p2", stressMatix[p1-1][0]);
+                stress = stressMatix[p1-1][0];
                 break;
             case R.id.imgp2:
-                mIntent.putExtra("p2", stressMatix[p1-1][1]);
+                stress = stressMatix[p1-1][1];
                 break;
             case R.id.imgp3:
-                mIntent.putExtra("p2", stressMatix[p1-1][2]);
+                stress = stressMatix[p1-1][2];
                 break;
             case R.id.imgp4:
-                mIntent.putExtra("p2", stressMatix[p1-1][3]);
+                stress = stressMatix[p1-1][3];
                 break;
+        }
+        mIntent.putExtra("p2", stress);
+
+        String s = ""+new Date().getTime() + "," + stress + "\n";
+        try {
+            FileOutputStream outputStream = openFileOutput("stress.txt", Context.MODE_APPEND);
+            outputStream.write(s.getBytes());
+            outputStream.close();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
         this.setResult(0, mIntent);

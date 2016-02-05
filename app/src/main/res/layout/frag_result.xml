@@ -1,83 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
 
-        <FrameLayout
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="160px">
+        <ImageView
             android:layout_width="match_parent"
-            android:layout_height="200px">
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200px"
-                android:background="@color/grey"
-                android:alpha="0.3"
-                android:gravity="center"/>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="200px"
-                android:gravity="center">
-                <TextView
-                    android:gravity="center"
-                    android:layout_width="200px"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/suggestion"
-                    android:textColor="@color/white"
-                    android:textSize="24sp"
-                    android:textStyle="bold"
-                    android:text="GG"/>
-            </LinearLayout>
-        </FrameLayout>
-
-
-
+            android:layout_height="160px"
+            android:background="@color/grey"
+            android:alpha="0.4"
+            android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="5px"
-            android:background="@color/black">
+            android:layout_height="140px"
+            android:gravity="center">
+            <TextView
+                android:gravity="center"
+                android:layout_width="220px"
+                android:layout_height="140px"
+                android:id="@+id/suggestion"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
         </LinearLayout>
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="180px">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="180px"
+            android:background="@color/grey"
+            android:alpha="0.4"
+            android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="120px"
-            android:background="@color/red"
-            android:alpha="0.8"
-            android:weightSum="6">
+            android:layout_height="180px"
+            android:gravity="center"
+            android:orientation="vertical">
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart"
+                android:gravity="center"
+                android:layout_width="280px"
+                android:layout_height="120px" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/status6"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:background="@color/green"
-                android:id="@+id/status5"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/status4"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/status3"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@color/blue"
-                android:layout_weight="1"
-                android:id="@+id/status2"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:id="@+id/status1"/>
-
+                android:gravity="center_horizontal"
+                android:layout_width="200px"
+                android:layout_height="60px"
+                android:textColor="@color/white"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="PAST             ↓DETAIL↓             NOW"/>
         </LinearLayout>
+
+
+    </FrameLayout>
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="5px"-->
+            <!--android:background="@color/black">-->
+        <!--</LinearLayout>-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="120px"-->
+            <!--android:background="@color/red"-->
+            <!--android:alpha="0.8"-->
+            <!--android:weightSum="6">-->
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/status6"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:background="@color/green"-->
+                <!--android:id="@+id/status5"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/status4"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/status3"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@color/blue"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/status2"/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_weight="1"-->
+                <!--android:id="@+id/status1"/>-->
+
+        <!--</LinearLayout>-->
 </LinearLayout>

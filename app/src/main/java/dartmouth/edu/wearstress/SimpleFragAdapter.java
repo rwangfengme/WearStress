@@ -21,24 +21,34 @@ public class SimpleFragAdapter extends FragmentGridPagerAdapter{
         super(fragmentManager);
         ResultFragment result = new ResultFragment();
         SelectP1Fragment selectP1 = new SelectP1Fragment();
+        ResultDetailFragment detail = new ResultDetailFragment();
         mContext = mainAct;
         fragmentRow.add(result);
         fragmentRow.add(selectP1);
+        fragmentRow.add(detail);
     }
 
     @Override
-    public Fragment getFragment(int i, int i1) {
-        return fragmentRow.get((i+1)*(i1+1)-1);
+    public Fragment getFragment(int row, int col) {
+        if (row == 0 && col == 0)
+            return fragmentRow.get(0);
+        else if (row == 0 && col == 1)
+            return fragmentRow.get(1);
+        else
+            return fragmentRow.get(2);
     }
 
     @Override
     public int getRowCount() {
-        return 1;
+        return 2;
     }
 
     @Override
     public int getColumnCount(int i) {
-        return 2;
+        if (i == 0)
+            return 2;
+        else
+            return 1;
     }
 
     @Override
