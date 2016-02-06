@@ -3,6 +3,7 @@ package dartmouth.edu.wearstress;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Vibrator;
 import android.util.Log;
 
 /**
@@ -14,6 +15,9 @@ public class EMAAlarmReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         startPSM(context);
+        Vibrator v = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
+        // Vibrate for 500 milliseconds
+        v.vibrate(3000);
     }
 
     // start the stress meter

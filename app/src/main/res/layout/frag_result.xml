@@ -7,22 +7,22 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="140px">
+        android:layout_height="150px">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="140px"
+            android:layout_height="150px"
             android:background="@color/grey"
             android:alpha="0.4"
             android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="140px"
+            android:layout_height="150px"
             android:gravity="center">
             <TextView
                 android:gravity="center"
                 android:paddingTop="15px"
                 android:layout_width="200px"
-                android:layout_height="140px"
+                android:layout_height="150px"
                 android:id="@+id/suggestion"
                 android:textColor="@color/white"
                 android:textSize="18sp"
@@ -33,29 +33,29 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="180px">
+        android:layout_height="210px">
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="180px"
+            android:layout_height="210px"
             android:background="@color/grey"
             android:alpha="0.4"
             android:gravity="center"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="180px"
+            android:layout_height="210px"
             android:gravity="center"
             android:orientation="vertical">
             <com.github.mikephil.charting.charts.LineChart
                 android:id="@+id/chart"
                 android:gravity="center"
-                android:layout_width="280px"
-                android:layout_height="120px" />
+                android:layout_width="320px"
+                android:layout_height="140px" />
             <TextView
                 android:gravity="center_horizontal"
-                android:layout_width="200px"
-                android:layout_height="60px"
+                android:layout_width="240px"
+                android:layout_height="70px"
                 android:textColor="@color/white"
-                android:textSize="8sp"
+                android:textSize="10sp"
                 android:textStyle="bold"
                 android:text="PAST           ↓DETAIL↓           NOW"/>
         </LinearLayout>

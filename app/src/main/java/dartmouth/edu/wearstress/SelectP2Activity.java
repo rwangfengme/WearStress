@@ -11,6 +11,7 @@ import android.widget.ImageButton;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -71,7 +72,9 @@ public class SelectP2Activity extends WearableActivity implements View.OnClickLi
         }
         mIntent.putExtra("p2", stress);
 
-        String s = ""+new Date().getTime() + "," + stress + "\n";
+        Calendar cal = Calendar.getInstance();
+        long milli = cal.getTimeInMillis();
+        String s = ""+milli + "," + stress + "\n";
         try {
             FileOutputStream outputStream = openFileOutput("stress.txt", Context.MODE_APPEND);
             outputStream.write(s.getBytes());

@@ -16,26 +16,28 @@ public class PSMScheduler {
 
     public static void setSchedule(Context context) {
         Calendar cal = Calendar.getInstance();
-        setSchedule(context,cal.HOUR,cal.MINUTE+3,0);
-        setSchedule(context,18,30,0);
+        long milli = cal.getTimeInMillis();
+        setSchedule(context, milli + 30000);
+        setSchedule(context, milli + 60000);
+        setSchedule(context, milli + 90000);
+        setSchedule(context, milli + 120000);
+        setSchedule(context, milli + 150000);
+        setSchedule(context, milli + 180000);
     }
 
-    private static void setSchedule(Context context, int hour, int min, int sec) {
+    private static void setSchedule(Context context, long milli) {
 
         // the request code distinguish different stress meter schedule instances
-        int requestCode = hour * 10000 + min * 100 + sec;
+        int requestCode = (int)milli;
         Intent intent = new Intent(context, EMAAlarmReceiver.class);
 
         PendingIntent pi = PendingIntent.getBroadcast(context, requestCode, intent,
                 PendingIntent.FLAG_CANCEL_CURRENT); //set pending intent to call EMAAlarmReceiver.
 
         Calendar calendar = Calendar.getInstance();
-        calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, hour);
-        calendar.set(Calendar.MINUTE, min);
-        calendar.set(Calendar.SECOND, sec);
+        calendar.setTimeInMillis(milli);
 
-        if(calendar.getTimeInMillis() < System.currentTimeMillis()) {
+        if (calendar.getTimeInMillis() < System.currentTimeMillis()) {
             calendar.add(Calendar.DATE, 1);
         }
 

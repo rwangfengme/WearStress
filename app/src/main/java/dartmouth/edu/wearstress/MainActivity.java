@@ -31,7 +31,7 @@ public class MainActivity extends WearableActivity {
 
         Vibrator v = (Vibrator) this.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 500 milliseconds
-        v.vibrate(500);
+        v.vibrate(3000);
 
         setAdapter();
     }
